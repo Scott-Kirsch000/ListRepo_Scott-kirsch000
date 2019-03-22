@@ -35,52 +35,53 @@ public:
     virtual int getLength() const =0;
 
     /**
-     * List Interface Mutator
+     * List Interface Mutator to insert an ItemType at an index.
      *
-     * @pre
+     * @pre None.
      * @param itemPosition
      * @param newItem
-     * @return
+     * @post newItem stored at the specified index if posible.
+     * @return Boolean value returned: true if successful, false if failed.
      */
-    virtual bool insert(const int& itemPosition, const ItemType& newItem) =0;
+    virtual bool insert(int itemPosition, const ItemType& newItem) =0;
 
     /**
-     * List Interface Mutator
+     * List Interface Mutator to remove an item from the List Interface.
      *
-     * @pre
+     * @pre There must be an Item to remove.
      * @param itemPostion
-     * @post
-     * @return
+     * @post item will be removed if possible.
+     * @return Boolean value returned: true if successful, false if failed.
      */
-    virtual bool remove(const int& itemPostion) =0;
+    virtual bool remove(int itemPostion) =0;
 
     /**
-     * List Interface Accessor
+     * List Interface Accessor that views the item at the specified index.
      *
-     * @pre
+     * @pre There must be an Item to view at the index.
      * @param itemPostion
-     * @post
-     * @return
+     * @post Returns a copy of the item if possible.
+     * @return ItemType returned by shallow copy.
      */
-    virtual ItemType getEntry(const int& itemPostion) const =0;
+    virtual ItemType getEntry(int itemPostion) const =0;
 
     /**
-     * List Interface Mutator
+     * List Interface Mutator that replaces an item at a specified index with a new item.
      *
-     * @pre
+     * @pre Index must be valid and there must be an item to replace.
      * @param itemPostion
      * @param newItem
-     * @post
-     * @return
+     * @post newItem will replace the item at the specified index and the old Item is returned if succesful.
+     * @return ItemType returned by shallow copy of replaced item.
      */
-    virtual ItemType replace(const int& itemPostion, const ItemType& newItem) =0;
+    virtual ItemType replace(int itemPostion, const ItemType& newItem) =0;
 
     /**
-     * List Interface Mutator
+     * List Interface Mutator that clears the List of all items
      *
-     * @pre
-     * @post
-     * @return
+     * @pre None.
+     * @post List Interface will be cleared of all items.
+     * @return boolean value returned: true if successful, false if failed.
      */
     virtual bool clear() =0;
 };
